@@ -205,7 +205,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-05-15 12:46:26" itemprop="dateModified" datetime="2022-05-15T12:46:26+01:00">2022-05-15</time>
+      <time title="Modified: 2022-05-15 14:03:18" itemprop="dateModified" datetime="2022-05-15T14:03:18+01:00">2022-05-15</time>
     </span>
 
   
@@ -224,6 +224,7 @@
 <p>final关键字<br>final类–&gt;不能被继承<br>final方法–&gt;可以被重载（重载：方法名相同，参数不同），不能被重写（方法名参数都相同）<br>final变量–&gt;只能被赋值一次，不可再更改</p>
 <p>接口类（interface）可以继承多个父接口（extends+接口1+接口2…）<br>普通类只能继承一个父类（单继承，extend+父类），但可以继承多个父接口（implements+接口1+接口2…）<br>理解：有些方法是很多类都需要用的，把这些共用的方法提取出来，最终汇聚在接口类中，当然会有多个接口类。</p>
 <p>接口类中的方法需要全部被复写，使用abstract适配器可以避免方法全部复写<br><img src="/2022/04/24/Java/5.jpg"></p>
+<p>静态工厂模型（附代码）：<br>Factory–&gt;创建接口子类的实例化，避免Main Class直接与接口子类耦合<br><img src="/2022/04/24/Java/7.jpg">  <img src="/2022/04/24/Java/8.jpg"></p>
 <h2 id="Java基础"><a href="#Java基础" class="headerlink" title="Java基础"></a>Java基础</h2><p>计算机获取数据的过程：<br><img src="/2022/04/24/Java/3.jpg"><br>实例化对象内存分配：<br>对象名称（对象地址）–&gt;栈<br>对象属性（对象）–&gt;堆<br><img src="/2022/04/24/Java/2.jpg"></p>
 <p>Java程序的可移植性原理：避免程序与操作系统直接耦合<br><img src="/2022/04/24/Java/6.jpg"></p>
 <p>JVM内存模型<br><img src="/2022/04/24/Java/4.jpg"></p>
@@ -392,7 +393,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="hexo博客搭建"><a href="#hexo博客搭建" class="headerlink" title="hexo博客搭建-.-"></a>hexo博客搭建-.-</h2><p>内容：<br>1，安装NodeJs, 有node和npm<br>2，安装Git，将git..&#x2F;bin配置到环境变量path和系统变量path，配置好用户名（与github的ID一致）和邮箱<br>    $ git config –global user.name “Your Name”<br>    $ git config –global user.email “<a href="mailto:&#x65;&#109;&#x61;&#x69;&#108;&#64;&#x65;&#120;&#x61;&#x6d;&#112;&#x6c;&#x65;&#x2e;&#x63;&#111;&#x6d;">&#x65;&#109;&#x61;&#x69;&#108;&#64;&#x65;&#120;&#x61;&#x6d;&#112;&#x6c;&#x65;&#x2e;&#x63;&#111;&#x6d;</a>“<br>3，安装hexo，npm install -g hexo-cli<br>4，hexo init–&gt;初始化到blog目录中 ，<br>    hexo s–&gt;开启<br>    hexo n “name”–&gt;创建文章<br>    souce&#x2F;_posts&#x2F;“name”–&gt;修改<br>    hexo clean–&gt;刷新<br>    hexo g–&gt;生成本地地址<a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a><br>5，修改config.yml，<br>    deploy:<br>      type: git<br>      repo: <a target="_blank" rel="noopener" href="https://github.com/SenCheng98/SenCheng98.github.io.git%EF%BC%88new">https://github.com/SenCheng98/SenCheng98.github.io.git（new</a> repository）<br>      branch: master<br>6，hexo d–&gt;配置hexo，部署到internet中<br>7，<a target="_blank" rel="noopener" href="https://sencheng98.github.io.git--&gt;访问博客/">https://SenCheng98.github.io.git--&gt;访问博客</a></p>
+          <h2 id="hexo博客搭建"><a href="#hexo博客搭建" class="headerlink" title="hexo博客搭建-.-"></a>hexo博客搭建-.-</h2><p>内容：<br>1，安装NodeJs, 有node和npm<br>2，安装Git，将git..&#x2F;bin配置到环境变量path和系统变量path，配置好用户名（与github的ID一致）和邮箱<br>    $ git config –global user.name “Your Name”<br>    $ git config –global user.email “<a href="mailto:&#101;&#x6d;&#x61;&#105;&#x6c;&#64;&#101;&#120;&#x61;&#109;&#x70;&#x6c;&#x65;&#46;&#x63;&#x6f;&#109;">&#101;&#x6d;&#x61;&#105;&#x6c;&#64;&#101;&#120;&#x61;&#109;&#x70;&#x6c;&#x65;&#46;&#x63;&#x6f;&#109;</a>“<br>3，安装hexo，npm install -g hexo-cli<br>4，hexo init–&gt;初始化到blog目录中 ，<br>    hexo s–&gt;开启<br>    hexo n “name”–&gt;创建文章<br>    souce&#x2F;_posts&#x2F;“name”–&gt;修改<br>    hexo clean–&gt;刷新<br>    hexo g–&gt;生成本地地址<a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a><br>5，修改config.yml，<br>    deploy:<br>      type: git<br>      repo: <a target="_blank" rel="noopener" href="https://github.com/SenCheng98/SenCheng98.github.io.git%EF%BC%88new">https://github.com/SenCheng98/SenCheng98.github.io.git（new</a> repository）<br>      branch: master<br>6，hexo d–&gt;配置hexo，部署到internet中<br>7，<a target="_blank" rel="noopener" href="https://sencheng98.github.io.git--&gt;访问博客/">https://SenCheng98.github.io.git--&gt;访问博客</a></p>
 <hr>
 <h2 id="一些常识"><a href="#一些常识" class="headerlink" title="一些常识"></a>一些常识</h2><p>内容：<br>Oracle–&gt;JDK<br>Apache –&gt;一些额外的工具包<br>将包导入IDEA，即可使用</p>
 <hr>
